@@ -1,5 +1,3 @@
-package Questao1.src;
-
 import java.util.List;
 
 public class PassagemAerea extends Passagem {

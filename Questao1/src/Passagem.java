@@ -1,15 +1,11 @@
-package Questao1.src;
-
-
 import java.util.List;
 import java.util.Locale;
 
-public abstract class  Passagem {
 
-   protected String passageiro;
-   protected double tarifa;
+public abstract class Passagem {
 
-    
+    private final String passageiro;
+    private final double tarifa;
 
     protected Passagem(String passageiro, double tarifa) {
         this.passageiro = passageiro;
@@ -32,7 +28,8 @@ public abstract class  Passagem {
     }
 
     public String resumo() {
-        return "Modal: %s%nPassageiro: %s%nTaxa de embarque: R$ %.2f%nDocumentos exigidos: %s"+
+        return String.format(Locale.forLanguageTag("pt-BR"),
+            "Modal: %s%nPassageiro: %s%nTaxa de embarque: R$ %.2f%nDocumentos exigidos: %s",
             getModal(), passageiro, calcularTaxaEmbarque(),
             String.join(", ", getDocumentosExigidos()));
     }
